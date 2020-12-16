@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Quora</title>
+</head>
+<body>
+    <ol>
+        {% for q in question_list %}
+            <li>
+                <p style="font-size: 18px;">{{q.content}}</p>
+                <ol type="i">
+                    {% for ans in q.answer_set.all %}
+                        <li>{{ans}}</li>
+                    {% endfor %}
+                </ol>
+            </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
